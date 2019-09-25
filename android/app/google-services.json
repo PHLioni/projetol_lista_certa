@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "217595576884",
+    "firebase_url": "https://projlistacerta.firebaseio.com",
+    "project_id": "projlistacerta",
+    "storage_bucket": "projlistacerta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217595576884:android:25b5fed572026cdc5a8061",
+        "android_client_info": {
+          "package_name": "com.phlioni.listacerta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217595576884-9uvufajk3inc7k0pfrh0fqui381bmmp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phlioni.listacerta",
+            "certificate_hash": "a7b2efd0ff4db6c176334773dad9a60e6679e009"
+          }
+        },
+        {
+          "client_id": "217595576884-9hor6q4nctsd4lrd0qum2li9a6ks0rvs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA15Xx1zpBBfLyeHDripO7upRRBZZ9ei-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217595576884-9hor6q4nctsd4lrd0qum2li9a6ks0rvs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
