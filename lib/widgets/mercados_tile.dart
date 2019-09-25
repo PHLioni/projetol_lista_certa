@@ -28,7 +28,7 @@ class MercadosTile extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Text(
-                          "${mercado.data["endereco"]} - n° ${mercado.data["numero"]} ${mercado.data["estado"]}"),
+                          "${mercado.data["endereco"]} -n° ${mercado.data["numero"]} ${mercado.data["estado"]}"),
                       FlatButton(
                         child: Text("Ver Listas"),
                         onPressed: () {},
