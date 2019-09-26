@@ -13,61 +13,76 @@ class AddMercadoScreen extends StatelessWidget {
               centerTitle: true,
             )),
         body: Padding(
-          padding: EdgeInsets.only(right: 16, left: 16, top: 16),
-          child: Column(
-            children: <Widget>[
-              TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Nome do Mercado",
-                    labelStyle: TextStyle(color: Colors.white)),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Endereço",
-                    labelStyle: TextStyle(color: Colors.white)),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: EdgeInsets.only(right: 16, left: 16, top: 30),
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(5),
+              child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    width: 100.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Numero",
-                          labelStyle: TextStyle(color: Colors.white)),
-                    ),                    
+                  TextField(                    
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Nome do Mercado",
+                        labelStyle: TextStyle(color: Colors.white)),
                   ),
-                  SizedBox(                    
-                    width: 200.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Cidade",
-                          labelStyle: TextStyle(color: Colors.white)),
-                    ),                    
-                  ),                  
+                  SizedBox(
+                    height: 16,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Endereço",
+                        labelStyle: TextStyle(color: Colors.white)),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 100.0,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Numero",
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 200.0,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Cidade",
+                              labelStyle: TextStyle(color: Colors.white)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Estado",
+                        labelStyle: TextStyle(color: Colors.white)),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SizedBox(
+                    width: 300,
+                    height: 50,
+                    child: RaisedButton(
+                      color: Colors.blueAccent,
+                      textColor: Colors.white,
+                      child: Text("Cadastrar", style: TextStyle(fontSize: 20)),
+                      onPressed: () {},
+                    ),
+                  )
                 ],
               ),
-               SizedBox(
-                height: 16,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Estado",
-                    labelStyle: TextStyle(color: Colors.white)),
-              ),
-            ],
-          ),
-        ));
+            )));
   }
 }
