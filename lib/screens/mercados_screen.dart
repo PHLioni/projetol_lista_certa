@@ -1,6 +1,7 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:listacerta/blocs/mercados_blocs.dart';
+import 'package:listacerta/screens/add_mercado_screen.dart';
 import 'package:listacerta/widgets/mercados_tile.dart';
 
 class MercadosScreen extends StatelessWidget {
@@ -47,7 +48,9 @@ class MercadosScreen extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
             backgroundColor: Colors.blueAccent,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AddMercadoScreen()));
+            },
           )
     );
   }
