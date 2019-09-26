@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(  
         backgroundColor: Colors.grey[800],     
         primaryColor: Colors.blueAccent,
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white))
+        ),       
       ),
       home: HomeScreen()
     );
