@@ -16,7 +16,7 @@ class ListasScreen extends StatelessWidget {
             preferredSize: Size.fromHeight(40.0),
             child: AppBar(
               automaticallyImplyLeading: false, // hides leading widget
-              title: Text("Mercados"),
+              title: Text("${mercado.data["nomeMercado"]} - ${mercado.data["cidade"]}"),
               centerTitle: true,
             )),
         body: Column(
@@ -39,7 +39,7 @@ class ListasScreen extends StatelessWidget {
                             backgroundColor: Colors.blueAccent,
                           ),
                           title: Text(
-                              "${map.data["data"]} - ${map.data["hora"]}"),
+                              "${map.data["data"]} - ${map.data["hora"]}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
                           onTap: () {},
                         ),
                       ),
