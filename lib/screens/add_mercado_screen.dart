@@ -53,7 +53,7 @@ class _AddMercadoScreenState extends State<AddMercadoScreen> {
                     controller: _enderecoController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: "Endereço",                        
+                        labelText: "Endereço",
                         labelStyle: TextStyle(color: Colors.white)),
                   ),
                   SizedBox(
@@ -113,8 +113,8 @@ class _AddMercadoScreenState extends State<AddMercadoScreen> {
                         String _numero = _numeroMercadoController.text;
                         String _cidade = _cidadeMercadoController.text;
                         String _estado = _estadoMercadoController.text;
-                        _saveMercados(
-                            _nomeMercado.toUpperCase(), _endereco, _numero, _cidade, _estado);
+                        _saveMercados(_nomeMercado.toUpperCase(), _endereco,
+                            _numero, _cidade, _estado);
                       },
                     ),
                   )
