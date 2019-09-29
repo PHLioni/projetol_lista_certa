@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:listacerta/screens/listas_screen.dart';
+
 import 'package:listacerta/widgets/mercados_header.dart';
 
 class MercadosTile extends StatelessWidget {
@@ -28,10 +30,15 @@ class MercadosTile extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Text(
-                          "${mercado.data["endereco"]} -n° ${mercado.data["numero"]} ${mercado.data["estado"]}"),
+                          "${mercado.data["endereco"]} - n° ${mercado.data["numero"]} ${mercado.data["estado"]}"),
                       FlatButton(
                         child: Text("Ver Listas"),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ListasScreen(uid: mercado.documentID, mercado: mercado)));
+                        },
                       )
                     ],
                   )

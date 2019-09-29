@@ -14,12 +14,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   MercadosBloc _mercadosBloc;
 
+
   @override
   void initState() {
     super.initState();
 
     _pageController = PageController();
     _mercadosBloc = MercadosBloc();
+  
   }
 
   @override
