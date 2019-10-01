@@ -1,12 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:listacerta/screens/itens_screen.dart';
 
-class ListasScreen extends StatelessWidget {
+class ItensScreen extends StatelessWidget {
+  final String itensId;
+
+  final DocumentSnapshot listas;
 
   final String uid;
-  final DocumentSnapshot mercado;
-  ListasScreen({this.uid, this.mercado});
+
+  ItensScreen({this.itensId, this.listas, this.uid});
 
   final Firestore _firestore = Firestore.instance;
 
@@ -18,8 +20,7 @@ class ListasScreen extends StatelessWidget {
           preferredSize: Size.fromHeight(40.0),
           child: AppBar(
             automaticallyImplyLeading: false, // hides leading widget
-            title: Text(
-                "${mercado.data["nomeMercado"]} - ${mercado.data["cidade"]}"),
+            title: Text("${listas.data["nomeLista"]} - ${listas.data["data"]}"),
             centerTitle: true,
           )),
       body: FutureBuilder<QuerySnapshot>(
@@ -27,9 +28,16 @@ class ListasScreen extends StatelessWidget {
             .collection("mercados")
             .document(uid)
             .collection("listas")
+            .document(itensId)
+            .collection("itens")
             .getDocuments(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) return Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.blueAccent),),);         
+          if (!snapshot.hasData)
+            return Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation(Colors.blueAccent),
+              ),
+            );
           return Column(
             children: snapshot.data.documents.map((map) {
               return Padding(
@@ -40,14 +48,13 @@ class ListasScreen extends StatelessWidget {
                       backgroundColor: Colors.blueAccent,
                     ),
                     title: Text(
-                      "${map.data["data"]} - ${map.data["hora"]}",
+                      "${map.data["produto"]} - Total: R\$ ${map.data["valorTotal"]}",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                     ),
-                    onTap: () {
-                      String itemId = map.documentID;
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ItensScreen(itensId: itemId,listas: map, uid: uid,)));
-                    },
+                    subtitle: Text(
+                        "Preço: ${map.data["preco"]} - Quantidade: ${map.data["quantidade"]}"),
+                    onTap: () {},
                   ),
                 ),
               );
