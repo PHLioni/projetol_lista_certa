@@ -1,11 +1,16 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:listacerta/blocs/login_bloc.dart';
 import 'package:listacerta/blocs/mercados_blocs.dart';
 import 'package:listacerta/screens/add_mercado_screen.dart';
+import 'package:listacerta/screens/login_screen.dart';
 
 import 'package:listacerta/widgets/mercados_tile.dart';
 
 class MercadosScreen extends StatelessWidget {
+
+  final _loginBloc = LoginBloc();
+
   @override
   Widget build(BuildContext context) {
     var _backgroundColor = Theme.of(context).backgroundColor;
@@ -19,6 +24,17 @@ class MercadosScreen extends StatelessWidget {
             child: AppBar(
               automaticallyImplyLeading: false, // hides leading widget
               title: Text("Mercados"),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.arrow_upward, color: Colors.white,),
+                  onPressed: (){
+                    _loginBloc.logOut();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen())
+                    );
+                  },
+                )
+              ],
               centerTitle: true,
             )),
         body: Padding(

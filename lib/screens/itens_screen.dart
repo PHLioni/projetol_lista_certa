@@ -20,7 +20,7 @@ class ItensScreen extends StatelessWidget {
           preferredSize: Size.fromHeight(40.0),
           child: AppBar(
             automaticallyImplyLeading: false, // hides leading widget
-            title: Text("${listas.data["nomeLista"]} - ${listas.data["data"]}"),
+            title: Text("${listas.data["nomeLista"]} - ${listas.data["data"]}"),            
             centerTitle: true,
           )),
       body: FutureBuilder<QuerySnapshot>(
@@ -48,7 +48,7 @@ class ItensScreen extends StatelessWidget {
                       backgroundColor: Colors.blueAccent,
                     ),
                     title: Text(
-                      "${map.data["produto"]} - Total: R\$ ${map.data["valorTotal"]}",
+                      "${map.data["produto"]} | ${map.data["marca"]} - Total: R\$ ${map.data["valorTotal"]}",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                     ),
