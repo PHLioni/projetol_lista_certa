@@ -3,6 +3,7 @@ import 'package:listacerta/blocs/login_bloc.dart';
 import 'package:listacerta/screens/home_page.dart';
 import 'package:listacerta/widgets/login_widget.dart';
 
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -93,19 +94,53 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return SizedBox(
                                   height: 50,
                                   width: 300,
-                                  child: RaisedButton(
+                                  child:InkWell(
+                            child: Container(                              
+                              width: 330,
+                              height: 100,
+                              decoration: snapshot.hasData ? BoxDecoration(
+                                  gradient: LinearGradient(colors: [
+                                    Colors.blueAccent,
+                                    Colors.blue[200]
+                                  ]),
+                                  borderRadius: BorderRadius.circular(6.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color:
+                                            Color(0xFF6078ea).withOpacity(.3),
+                                        offset: Offset(0.0, 8.0),
+                                        blurRadius: 8.0)
+                                  ]): BoxDecoration(
+                                  
+                                  color: Colors.grey[600],
+                                  borderRadius: BorderRadius.circular(6.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color:
+                                            Colors.grey.withOpacity(.3),
+                                        offset: Offset(0.0, 8.0),
+                                        blurRadius: 8.0)
+                                  ]),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap:  snapshot.hasData
+                                        ? _loginBloc.submit
+                                        : null,                                      
+                                  child: Center(
                                     child: Text(
                                       "Entrar",
-                                      style: TextStyle(fontSize: 20.0),
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: "Poppins-Bold",
+                                          fontSize: 18,
+                                          letterSpacing: 1.0),
                                     ),
-                                    color: Colors.blueAccent,
-                                    textColor: Colors.white,
-                                    disabledColor:
-                                        Colors.blueAccent.withAlpha(100),
-                                    onPressed: snapshot.hasData
-                                        ? _loginBloc.submit
-                                        : null,
                                   ),
+                                ),
+                              ),
+                            ),
+                          )
                                 );
                               },
                             ),
