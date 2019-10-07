@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listacerta/blocs/login_bloc.dart';
+import 'package:listacerta/screens/cadastro_screen.dart';
 import 'package:listacerta/screens/home_page.dart';
 import 'package:listacerta/widgets/login_widget.dart';
 
@@ -145,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 30,
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: 25),
@@ -154,7 +155,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   "Ainda não possue uma conta? Clique aqui!",
                                   style: TextStyle(color: Colors.white),
                                 ),
-                                onTap: () {},
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => CadastroScreen()));
+                                },
                               ),
                             )
                           ],

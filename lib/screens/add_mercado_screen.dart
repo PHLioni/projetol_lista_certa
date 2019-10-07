@@ -41,7 +41,7 @@ class _AddMercadoScreenState extends State<AddMercadoScreen> {
                     style: TextStyle(color: Colors.white),
                     controller: _nomeMercadoController,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(),                    
                         labelText: "Nome do Mercado",
                         labelStyle: TextStyle(color: Colors.white)),
                   ),
@@ -49,10 +49,11 @@ class _AddMercadoScreenState extends State<AddMercadoScreen> {
                     height: 16,
                   ),
                   TextFormField(
+                    
                     style: TextStyle(color: Colors.white),
                     controller: _enderecoController,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                         labelText: "Endereço",
                         labelStyle: TextStyle(color: Colors.white)),
                   ),
@@ -107,7 +108,7 @@ class _AddMercadoScreenState extends State<AddMercadoScreen> {
                       color: Colors.blueAccent,
                       textColor: Colors.white,
                       child: Text("Cadastrar", style: TextStyle(fontSize: 20)),
-                      onPressed: () {
+                      onPressed:() {
                         String _nomeMercado = _nomeMercadoController.text;
                         String _endereco = _enderecoController.text;
                         String _numero = _numeroMercadoController.text;
