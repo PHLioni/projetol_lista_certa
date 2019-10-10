@@ -1,6 +1,8 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:listacerta/blocs/mercados_blocs.dart';
+import 'package:listacerta/blocs/mercados_list_bloc.dart';
+import 'package:listacerta/screens/listas_user_screen.dart';
 import 'package:listacerta/screens/mercados_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     _pageController = PageController();
     _mercadosBloc = MercadosBloc();
-  
+    
   }
 
   @override
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             )),
         body: SafeArea(
-            child: BlocProvider<MercadosBloc>(
+          child: BlocProvider<MercadosBloc>(
           bloc: _mercadosBloc,
           child: PageView(
             controller: _pageController,
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _page = p;
               });
             },
-            children: <Widget>[Container(color: Colors.red), MercadosScreen()],
+            children: <Widget>[ListasUserScreen(), MercadosScreen()],
           ),
         )));
   }

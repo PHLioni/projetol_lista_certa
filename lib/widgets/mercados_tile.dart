@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:listacerta/screens/listas_screen.dart';
 
-import 'package:listacerta/widgets/mercados_header.dart';
-
 class MercadosTile extends StatelessWidget {
   final DocumentSnapshot mercado;
 
@@ -24,8 +22,7 @@ class MercadosTile extends StatelessWidget {
               padding: EdgeInsets.only(left: 16, right: 16, top: 0, bottom: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  MercadosHeader(),
+                children: <Widget>[                 
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[

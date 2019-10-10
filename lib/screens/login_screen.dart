@@ -4,7 +4,6 @@ import 'package:listacerta/screens/cadastro_screen.dart';
 import 'package:listacerta/screens/home_page.dart';
 import 'package:listacerta/widgets/login_widget.dart';
 
-
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -93,56 +92,61 @@ class _LoginScreenState extends State<LoginScreen> {
                               stream: _loginBloc.outSubmitValid,
                               builder: (context, snapshot) {
                                 return SizedBox(
-                                  height: 50,
-                                  width: 300,
-                                  child:InkWell(
-                            child: Container(                              
-                              width: 330,
-                              height: 100,
-                              decoration: snapshot.hasData ? BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    Colors.blueAccent,
-                                    Colors.blue[200]
-                                  ]),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color:
-                                            Color(0xFF6078ea).withOpacity(.3),
-                                        offset: Offset(0.0, 8.0),
-                                        blurRadius: 8.0)
-                                  ]): BoxDecoration(
-                                  
-                                  color: Colors.grey[600],
-                                  borderRadius: BorderRadius.circular(6.0),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color:
-                                            Colors.grey.withOpacity(.3),
-                                        offset: Offset(0.0, 8.0),
-                                        blurRadius: 8.0)
-                                  ]),
-                              child: Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  onTap:  snapshot.hasData
-                                        ? _loginBloc.submit
-                                        : null,                                      
-                                  child: Center(
-                                    child: Text(
-                                      "Entrar",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: "Poppins-Bold",
-                                          fontSize: 18,
-                                          letterSpacing: 1.0),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                                );
+                                    height: 50,
+                                    width: 300,
+                                    child: InkWell(
+                                      child: Container(
+                                        width: 330,
+                                        height: 100,
+                                        decoration: snapshot.hasData
+                                            ? BoxDecoration(
+                                                gradient: LinearGradient(
+                                                    colors: [
+                                                      Colors.blueAccent,
+                                                      Colors.blue[200]
+                                                    ]),
+                                                borderRadius:
+                                                    BorderRadius.circular(6.0),
+                                                boxShadow: [
+                                                    BoxShadow(
+                                                        color: Color(0xFF6078ea)
+                                                            .withOpacity(.3),
+                                                        offset:
+                                                            Offset(0.0, 8.0),
+                                                        blurRadius: 8.0)
+                                                  ])
+                                            : BoxDecoration(
+                                                color: Colors.grey[600],
+                                                borderRadius:
+                                                    BorderRadius.circular(6.0),
+                                                boxShadow: [
+                                                    BoxShadow(
+                                                        color: Colors.grey
+                                                            .withOpacity(.3),
+                                                        offset:
+                                                            Offset(0.0, 8.0),
+                                                        blurRadius: 8.0)
+                                                  ]),
+                                        child: Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: snapshot.hasData
+                                                ? _loginBloc.submit
+                                                : null,
+                                            child: Center(
+                                              child: Text(
+                                                "Entrar",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontFamily: "Poppins-Bold",
+                                                    fontSize: 18,
+                                                    letterSpacing: 1.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ));
                               },
                             ),
                             SizedBox(
@@ -155,8 +159,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   "Ainda não possue uma conta? Clique aqui!",
                                   style: TextStyle(color: Colors.white),
                                 ),
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => CadastroScreen()));
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              CadastroScreen()));
                                 },
                               ),
                             )
